@@ -1,5 +1,4 @@
 # %%
-# import the necessary packages
 import argparse
 import random
 import time
@@ -23,16 +22,13 @@ def segment_red(image_bgr):
 	lower_red = np.array([170,45,45])
 	upper_red = np.array([180,255,255])
 	mask1 = cv2.inRange(img_hsv, lower_red, upper_red)
-	# join two masks
 	mask = mask0 + mask1
 	# set output to zero everywhere except mask
 	output_img = image_bgr.copy()
 	output_img[np.where(mask==0)] = 0
-	# or your HSV image, which I *believe* is what you want
 	output_hsv = image_bgr.copy()
 	output_hsv[np.where(mask==0)] = 0
 	output_bgr=cv2.cvtColor(output_hsv, cv2.COLOR_HSV2BGR)
-	#output_rgb_=cv2.cvtColor(output_hsv, cv2.COLOR_BGR2RGB)
 
 	return output_bgr
 
