@@ -30,7 +30,6 @@ for path in os.listdir(base1):
 X = np.array(X)
 y = np.array(y)
 
-# first neural network with keras tutorial
 from numpy import loadtxt
 from keras.models import Sequential
 from keras.layers import *
