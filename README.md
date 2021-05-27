@@ -38,7 +38,7 @@ To know which of the proposed regions exactly contains the desired road signs, I
 The following code cells show a demo of the full assignment requirements. 
 
 ## Imports and Setup
-```
+```python
 import argparse
 import random
 import time
@@ -57,7 +57,9 @@ images_paths = [base+entry for entry in os.listdir(base)]
 ```
 
 ## Code Logic 
-```
+
+
+```python
 for i, path in enumerate(images_paths):
     image = cv2.imread(path)
     red_segmented_bgr = segment_red(image)
